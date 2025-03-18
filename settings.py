@@ -20,7 +20,7 @@ INSTANCES = {
         "y":int(PROJECT["height"] / 2)
     },
     "representation":{
-        "sprites_sheet":"asteroids/sheets/player_sheet.png",
+        "sprites_sheet":"./sheets/player_sheet.png",
         "frame":0,
         "width":92,
         "height":82,
@@ -34,7 +34,7 @@ INSTANCES = {
         "y":0
     },
     "representation":{
-        "sprites_sheet":"asteroids/sheets/player.png",
+        "sprites_sheet":"./sheets/player.png",
         "frame":4,
         "width":20,
         "height":20,
@@ -51,7 +51,7 @@ INSTANCES = {
         "y":0
     },
     "representation":{
-        "sprites_sheet":"asteroids/sheets/rocks_sheet.png",
+        "sprites_sheet":"./sheets/rocks_sheet.png",
         "frame":0,
         "width":194,
         "height":130,
@@ -68,7 +68,7 @@ INSTANCES = {
         "y":400
     },
     "representation":{
-        "sprites_sheet":"asteroids/sheets/rocks_sheet.png",
+        "sprites_sheet":"./sheets/rocks_sheet.png",
         "frame":0,
         "width":194,
         "height":130,
@@ -85,7 +85,7 @@ INSTANCES = {
         "y":400
     },
     "representation":{
-        "sprites_sheet":"asteroids/sheets/rocks_sheet.png",
+        "sprites_sheet":"./sheets/rocks_sheet.png",
         "frame":0,
         "width":194,
         "height":130,
@@ -102,7 +102,7 @@ INSTANCES = {
         "y":400
     },
     "representation":{
-        "sprites_sheet":"asteroids/sheets/rocks_sheet.png",
+        "sprites_sheet":"./sheets/rocks_sheet.png",
         "frame":0,
         "width":194,
         "height":130,
