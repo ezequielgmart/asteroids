@@ -48,13 +48,6 @@ class SnakEngine:
                 if event.type == pygame.QUIT:
                     running = False
 
-                # # Pasar eventos a los objetos relevantes
-                # for game_obj in self.game_objs:
-                #     if isinstance(game_obj, ObjectPlayer):
-
-                #         # a las acciones que necesiten un evento. Como disparar
-                #         game_obj.handle_event(event, self.game_objs)
-
                 # observar evento de presionar cierre app
                 self.close_app_event_handler(event)
 
@@ -62,7 +55,7 @@ class SnakEngine:
 
             # Actualizar el estado de los objetos
             for game_obj in self.game_objs:
-                game_obj.update(event, self.game_objs)
+                game_obj.update(self.game_objs)
 
             # Actualizar pantalla
             pygame.display.flip()

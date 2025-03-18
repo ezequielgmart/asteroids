@@ -1,6 +1,9 @@
 from settings import *
-from game_objects import RockObject, ObjectPlayer, BulletObject
+
 from engine import SnakEngine
+
+from objects.rock_obj_ import RockObject
+from objects.player_obj_ import ObjectPlayer
 
 # todos los objetos con los que el jugador puede interactuar
 GAME_OBJS = [ObjectPlayer()]
