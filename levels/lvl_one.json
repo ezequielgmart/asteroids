@@ -1,0 +1,44 @@
+{
+    "level_name": "lvl_one",
+    "game_objs": [
+            {
+            "code_path":"objects.handlers.lvl_one_",
+            "data_for_instance":{},
+            "obj_name_for_instance":"OneLevelHandler"
+                },
+            {
+                "code_path":"objects.interactive.player_obj_",
+                "data_for_instance":{"x":400,"y":300},
+                "obj_name_for_instance":"ObjectPlayer"
+                    },{
+                "code_path":"objects.interactive.big_rock_obj_",
+                "data_for_instance":{"x":0,"y":500},
+                "obj_name_for_instance":"BigRockObject"
+                    },{
+                "code_path":"objects.interactive.big_rock_obj_",
+                "data_for_instance":{"x":500,"y":0},
+                "obj_name_for_instance":"BigRockObject"
+                    },{
+                "code_path":"objects.interactive.big_rock_obj_",
+                "data_for_instance":{"x":0,"y":300},
+                "obj_name_for_instance":"BigRockObject"
+                    },{
+                    "code_path":"objects.interactive.big_rock_obj_",
+                    "data_for_instance":{"x":700,"y":0},
+                    "obj_name_for_instance":"BigRockObject"
+                        }
+            
+        ],
+        "hud_objs":[{
+            "code_path":"objects.hud.title_text_",
+            "data_for_instance":{
+                "text":"Score",
+                "font_family":"Arial",
+                "font_size":30,
+                "color":[250,250,250],
+                "pixel_position":[10,10]
+            },
+            "obj_name_for_instance":"TextComponent"
+            
+        }]  
+}

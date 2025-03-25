@@ -1,5 +1,9 @@
 import pygame
 
+from engine.gameloop_ import GameloopHandler
+
+# PG = pygame
+
 PROJECT = {
     "name": 'ASTEROIDS',
     "width": 800,
@@ -13,12 +17,16 @@ PROJECT = {
     }
 }
 
+FRAMES = {"rocks":{
+    "big": {"x": 0, "y": 0, "width": 183, "height": 132},
+    "medium": {"x": 0, "y": 132, "width": 146, "height": 120},
+    "small": {"x": 0, "y": 252, "width": 79, "height": 80},
+    "mini": {"x": 0, "y": 332, "width": 43, "height": 54},
+}
+}
+# Objetos que puedo utilizar para construir los niveles 
 INSTANCES = {
     "player":{
-    "localization":{
-        "x":int(PROJECT["width"] / 2),
-        "y":int(PROJECT["height"] / 2)
-    },
     "representation":{
         "sprites_sheet":"./sheets/player_sheet.png",
         "frame":0,
@@ -26,13 +34,8 @@ INSTANCES = {
         "height":82,
         "scale":1,
 
-    }
-    },
+    }},
     "bullet":{
-    "localization":{
-        "x":0,
-        "y":0
-    },
     "representation":{
         "sprites_sheet":"./sheets/player.png",
         "frame":4,
@@ -40,86 +43,37 @@ INSTANCES = {
         "height":20,
         "scale":1,
 
+    }},
+    "bigrock":{
+    "representation":{
+        "sprites_sheet":"./sheets/rocks_sheet.png",
+        "frame_x": 0, 
+        "frame_y": 0,
+        "width":183,
+        "height":132,
+        "scale":1,
+
+    }},
+    "midrock":{
+    "representation":{
+        "sprites_sheet":"./sheets/rocks_sheet.png",
+        "frame_x": 0, 
+        "frame_y": 252,
+        "width":146,
+        "height":120,
+        "scale":1,
+
     }
-},
-"interactive_objs":
-{"rocks":[
     
-    {
-    "localization":{
-        "x":0,
-        "y":0
-    },
-    "representation":{
-        "sprites_sheet":"./sheets/rocks_sheet.png",
-        "frame":0,
-        "width":194,
-        "height":130,
-        "scale":1,
-
-    },
-    "physics":{
-        "speed":1
-    }
-},
-    {
-    "localization":{
-        "x":0,
-        "y":400
-    },
-    "representation":{
-        "sprites_sheet":"./sheets/rocks_sheet.png",
-        "frame":0,
-        "width":194,
-        "height":130,
-        "scale":1,
-
-    },
-    "physics":{
-        "speed":1
-    }
-},
-    {
-    "localization":{
-        "x":600,
-        "y":400
-    },
-    "representation":{
-        "sprites_sheet":"./sheets/rocks_sheet.png",
-        "frame":0,
-        "width":194,
-        "height":130,
-        "scale":1,
-
-    },
-    "physics":{
-        "speed":1
-    }
-},
-    {
-    "localization":{
-        "x":350,
-        "y":400
-    },
-    "representation":{
-        "sprites_sheet":"./sheets/rocks_sheet.png",
-        "frame":0,
-        "width":194,
-        "height":130,
-        "scale":1,
-
-    },
-    "physics":{
-        "speed":1
-    }
 }
-]}
+
 
 }
 pygame.init()
 
 SCREEN = pygame.display.set_mode((PROJECT["width"], PROJECT["height"]))
 CLOCK = pygame.time.Clock()
+
 
 # Controller settings 
 CONTROLLERS = {
@@ -134,3 +88,9 @@ CONTROLLERS = {
         "CLOSE_APP_BTN":pygame.K_ESCAPE} 
 
 
+LEVELS = {
+    "initial":"./levels/initial.json",
+    "lvl_one":"./levels/lvl_one.json"
+}
+
+GAMELOOP = GameloopHandler(SCREEN,PROJECT['width'],PROJECT['height'])

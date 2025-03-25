@@ -1,0 +1,24 @@
+{
+    "level_name": "initial",
+    "game_objs": [
+        {
+            "code_path":"objects.handlers.initial_level_",
+            "data_for_instance":{"x":0,"y":0},
+            "obj_name_for_instance":"InitialLevelHandler"
+            }
+        ],
+    "hud_objs":[
+        {
+            "code_path":"objects.hud.title_text_",
+            "data_for_instance":{
+                "text":"Press ESC to start",
+                "font_family":"Arial",
+                "font_size":48,
+                "color":[250,250,250],
+                "pixel_position":[200,500]
+            },
+            "obj_name_for_instance":"TextComponent"
+            
+        }]    
+}
+

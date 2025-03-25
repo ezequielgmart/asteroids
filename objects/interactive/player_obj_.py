@@ -1,7 +1,7 @@
 from settings import *
 import pygame, math
-from engine import SpriteSheetRender
-from objects.bullet_obj_ import BulletObject
+from engine.render_sprites_sheet_ import SpriteSheetRender
+from objects.interactive.bullet_obj_ import BulletObject
 
 """
 
@@ -10,8 +10,9 @@ Archivo donde se define el objeto interactivo
 """
 class ObjectPlayer:
     # Clase que representa al jugador
-    def __init__(self):
+    def __init__(self,x,y):
 
+        self.engine = None  # Inicializa el atributo engine
         # Representation
         self.renderer = SpriteSheetRender(INSTANCES["player"]["representation"]["sprites_sheet"])  # Instancia del render de sprites
         self.colour = PROJECT["colors"]["black"]  # Fondo transparente en sprites
@@ -24,8 +25,8 @@ class ObjectPlayer:
         self.scale = INSTANCES["player"]["representation"]["scale"]  
 
         # localization
-        self.x = INSTANCES["player"]["localization"]["x"]  
-        self.y = INSTANCES["player"]["localization"]["y"]  
+        self.x = x
+        self.y = y
 
         # variables para Fisicas 
         self.rotation_angle = 0
@@ -35,10 +36,9 @@ class ObjectPlayer:
         self.friction = 0.98  # Coeficiente de fricción
         self.last_shot_time = 0
 
-        # Bandera para controlar disparos
-        self.can_shoot = True
+        self.lives = 3
 
-    def update(self, gameObjs):
+    def update(self):
         # Generar el sprite desde la hoja de sprites
         frame_image = self.renderer.render_sprite_from_sheet(
             self.frame, self.width, self.height, self.scale,
@@ -52,12 +52,12 @@ class ObjectPlayer:
         pygame.draw.rect(SCREEN, PROJECT["colors"]["blue"], (self.x, self.y, self.width, self.height), 3)
 
         # funcion para controlar el movimiento.  
-        self.asteroids_movement()    
+        self.ship_movement()    
 
-        self.handle_event_shot(gameObjs)
+        self.handle_event_shot()
 
     # detectar los eventos de disparos
-    def handle_event_shot(self, gameObjs):
+    def handle_event_shot(self):
            
         # Controlar el movimiento de la nave y rotación
         keys = pygame.key.get_pressed()
@@ -65,14 +65,14 @@ class ObjectPlayer:
         current_time = pygame.time.get_ticks()  # Tiempo actual en milisegundos
 
         if keys[CONTROLLERS['SHOOT_BTN']]:
-            if current_time - self.last_shot_time > 100:  # 100ms entre disparos
-                gameObjs.append(BulletObject(self.x, self.y, self.width, self.height, self.rotation_angle))
+            if current_time - self.last_shot_time > 300:  # 100ms entre disparos
+                GAMELOOP.add_obj(BulletObject(self.x, self.y, self.width, self.height, self.rotation_angle))
                 # self.can_shoot = False
                 self.last_shot_time = current_time
         
             
     # funcion para controlar la nave y que tenga un movimiento que simule el juego origiginal asteroids
-    def asteroids_movement(self):
+    def ship_movement(self):
         # Controlar el movimiento de la nave y rotación
         keys = pygame.key.get_pressed()
 

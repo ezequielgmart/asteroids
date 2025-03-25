@@ -1,6 +1,6 @@
 from settings import *
 import pygame, math
-from engine import SpriteSheetRender
+from engine.render_sprites_sheet_ import SpriteSheetRender
 
 """
 
@@ -10,6 +10,7 @@ Archivo donde se define el objeto interactivo
 class BulletObject:
     def __init__(self, player_x,player_y,player_width,player_height, player_rotation_angle):
             
+            self.engine = None  # Inicializa el atributo engine
             # Representation
             self.frame = INSTANCES["bullet"]["representation"]["frame"]
             self.scale = INSTANCES["bullet"]["representation"]["scale"]
@@ -28,7 +29,7 @@ class BulletObject:
     def start(self):
         pass
     
-    def update(self, gameObjs):
+    def update(self):
         # Generar el sprite desde la hoja de sprites
         frame_image = self.renderer.render_sprite_from_sheet(
             self.frame, self.width, self.height, self.scale,
@@ -38,7 +39,7 @@ class BulletObject:
         # Dibujar el sprite en la posición actual del jugador
         SCREEN.blit(frame_image, (self.x, self.y))
 
-        self.borders_collition_handler()
+        # self.borders_collition_handler()
         pygame.draw.rect(SCREEN, PROJECT["colors"]["green"], (self.x, self.y, self.width, self.height), 3)
 
         # Actualizar la posición del proyectil
@@ -61,15 +62,3 @@ class BulletObject:
         # Calcular la velocidad inicial basada en la dirección de rotación
         self.velocity_x = math.cos(self.angle) * self.speed
         self.velocity_y = -math.sin(self.angle) * self.speed
-    
-    # comportamiento del juego cuando el jugador pase los borders de la pantalla. 
-    def borders_collition_handler(self):    
-        
-        if self.x > PROJECT["width"] + 10 :
-            self.x = 0
-        elif self.x < 0:
-            self.x = PROJECT["width"] 
-        elif self.y > PROJECT["height"] +10:
-            self.y =0
-        elif self.y < 0:
-            self.y = PROJECT["height"]  
