@@ -115,6 +115,9 @@ class OneLevelHandler:
             # Si el jugador aún tiene vidas, crea un nuevo jugador
             if self.player_lives > 0:
                 GAMELOOP.add_obj(ObjectPlayer(400, 300))
+            else: 
+                print("game Over") 
+                GAMELOOP.change_level(LEVELS['initial'])   
             # Resetea el tiempo de colisión
             self.player_last_colission = None
 

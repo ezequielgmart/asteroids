@@ -8,9 +8,10 @@ asteroids-game self-made engine
 ya se actualiza el score. 
 Solo crear dos nuevas mid rocks si se impacta una roca grande 
 actualizar que las rocas se tomen de un sprite en lugar de un spritesheet
-1. colisiones con rocas y el jugador
-1. Respawnear el jugador cuando impacte con una roca y restarle una vida
-2. sistema de vidas
+colisiones con rocas y el jugador
+Respawnear el jugador cuando impacte con una roca y restarle una vida
+sistema de vidas
+El bucle de juego completo: luego de perder todas las vidas nos re-envia al menu principal y podemos volver a jugar
 
 ## TO DO 
 
