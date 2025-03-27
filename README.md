@@ -9,11 +9,11 @@ ya se actualiza el score.
 Solo crear dos nuevas mid rocks si se impacta una roca grande 
 actualizar que las rocas se tomen de un sprite en lugar de un spritesheet
 1. colisiones con rocas y el jugador
+1. Respawnear el jugador cuando impacte con una roca y restarle una vida
+2. sistema de vidas
 
 ## TO DO 
 
-
-2. sistema de vidas
 3. hud para las vidas
 4. nivel de game over
 5. sistema de particulas para la nave y 
