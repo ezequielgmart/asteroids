@@ -1,9 +1,10 @@
 from settings import *
+
 from objects.interactive.bullet_obj_ import BulletObject
-# from objects.interactive.rock_class import RockClass
 from objects.interactive.big_rock_obj_ import BigRockObject
 from objects.interactive.mid_rock_obj_ import MidRockObject
 from objects.hud.score_text import ScoreTxtObject
+
 import random
 """
     este archivo es para eventos globales del nivel. 
@@ -30,8 +31,7 @@ class OneLevelHandler:
                     
                     if isinstance(obj, BulletObject):
 
-                        # Buscar colisiones con BigRockObject
-
+                        # Buscar colisiones de rocas con proyectiles
                         for rock in GAMELOOP.game_objects:
 
                             if isinstance(rock, rockInstance):
@@ -48,7 +48,10 @@ class OneLevelHandler:
                                     # aumentar escore cada vez que rompa una roca grande
                                     self.add_score_for_big()
 
-                                    self.create_resulting_mid_rocks(rock.x,rock.y)
+                                    # Solo crear dos nuevas mid rocks si un 
+                                    if isinstance(rock, BigRockObject):
+                                        
+                                        self.create_resulting_mid_rocks(rock.x,rock.y)
                                     
                                     break  # Salir del bucle interno si ya se eliminó la roca
    
@@ -64,6 +67,7 @@ class OneLevelHandler:
          self.update_score_hud()
          
     def update_score_hud(self):
+         
          for obj in GAMELOOP.hud:
               
             if isinstance(obj, ScoreTxtObject):

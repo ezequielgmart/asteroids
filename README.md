@@ -1,6 +1,23 @@
 # asteroids
 asteroids-game self-made engine
 
+## NOTA DEL COMMIT 3/27/25
+
+## DID    
+
+ya se actualiza el score. 
+Solo crear dos nuevas mid rocks si se impacta una roca grande 
+
+
+## TO DO 
+
+
+colisiones con rocas y el jugador
+sistema de vidas
+hud para las vidas
+nivel de game over
+sistema de particulas para la nave y las rocas cuando se destrozen
+
 ## To-do al 3/20/2025
 
 

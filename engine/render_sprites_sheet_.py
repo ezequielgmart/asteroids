@@ -55,3 +55,26 @@ class MultipleSpriteSheetRender:
         image = pygame.transform.rotate(image, rotation_angle)
         image.set_colorkey(colour)
         return image
+
+# Solo renderiza una imagen    
+class SingleSpriteRender:
+    def __init__(self, image_path):
+        # Cargar la imagen directamente
+        self.image = pygame.image.load(image_path).convert_alpha()
+
+    def render_sprite(self, scale=1, colour=None, rotation_angle=0):
+        # Escalar la imagen al tamaño deseado
+        image = pygame.transform.scale(self.image, (
+            int(self.image.get_width() * scale), 
+            int(self.image.get_height() * scale)
+        ))
+
+        # Aplicar rotación si es necesario
+        if rotation_angle != 0:
+            image = pygame.transform.rotate(image, rotation_angle)
+
+        # Establecer un color transparente si se especifica
+        if colour:
+            image.set_colorkey(colour)
+
+        return image
