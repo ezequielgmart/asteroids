@@ -7,16 +7,18 @@ asteroids-game self-made engine
 
 ya se actualiza el score. 
 Solo crear dos nuevas mid rocks si se impacta una roca grande 
-
+actualizar que las rocas se tomen de un sprite en lugar de un spritesheet
+1. colisiones con rocas y el jugador
 
 ## TO DO 
 
 
-colisiones con rocas y el jugador
-sistema de vidas
-hud para las vidas
-nivel de game over
-sistema de particulas para la nave y las rocas cuando se destrozen
+2. sistema de vidas
+3. hud para las vidas
+4. nivel de game over
+5. sistema de particulas para la nave y 
+6. las rocas cuando se destrozen
+7. volver una clase la encargada de actualizar valores para los textos de un hud
 
 ## To-do al 3/20/2025
 

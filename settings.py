@@ -46,7 +46,7 @@ INSTANCES = {
     }},
     "bigrock":{
     "representation":{
-        "sprites_sheet":"./sheets/rocks_sheet.png",
+        "sprites_sheet":"./sheets/bigrock.png",
         "frame_x": 0, 
         "frame_y": 0,
         "width":183,
@@ -56,11 +56,11 @@ INSTANCES = {
     }},
     "midrock":{
     "representation":{
-        "sprites_sheet":"./sheets/rocks_sheet.png",
+        "sprites_sheet":"./sheets/midrock.png",
         "frame_x": 0, 
-        "frame_y": 252,
-        "width":146,
-        "height":120,
+        "frame_y": 0,
+        "width":72,
+        "height":77,
         "scale":1,
 
     }
