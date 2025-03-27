@@ -30,7 +30,7 @@
             
         ],
         "hud_objs":[{
-            "code_path":"objects.hud.title_text_",
+            "code_path":"objects.hud.score_text",
             "data_for_instance":{
                 "text":"0",
                 "font_family":"Arial",
@@ -38,7 +38,7 @@
                 "color":[250,250,250],
                 "pixel_position":[10,10]
             },
-            "obj_name_for_instance":"TextComponent"
+            "obj_name_for_instance":"ScoreTxtObject"
             
         }]  
 }

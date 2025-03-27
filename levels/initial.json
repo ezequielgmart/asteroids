@@ -17,7 +17,7 @@
                 "color":[250,250,250],
                 "pixel_position":[200,500]
             },
-            "obj_name_for_instance":"TextComponent"
+            "obj_name_for_instance":"TitleTxtObject"
             
         }]    
 }

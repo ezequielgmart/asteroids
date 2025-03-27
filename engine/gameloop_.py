@@ -95,7 +95,7 @@ class GameloopHandler():
         
         for object in self.hud:
 
-            object.render()    
+            object.update()    
 
     # esta funcion agrega un nuevo objeto a los objetos y se puede utilizar desde afuera. 
     def add_obj(self, obj):
